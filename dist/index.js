@@ -5,6 +5,7 @@ exports.SampleLoopbackApplication = application_1.SampleLoopbackApplication;
 async function main(options = {}) {
     const app = new application_1.SampleLoopbackApplication(options);
     await app.boot();
+    await app.migrateSchema();
     await app.start();
     const url = app.restServer.url;
     console.log(`Server is running at ${url}`);
